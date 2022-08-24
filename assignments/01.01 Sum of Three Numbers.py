@@ -1,12 +1,8 @@
-x = input("Please enter a number: ")
-print("First Number: " + x)
+x = input("Please enter an integer: ")
 
-y = input("Please enter a second number: ")
-print("Second Number: " + y)
+y = input("Please enter a second integer: ")
 
-z = input ("Please enter a third number: ")
-print("Third Number: " + z)
+z = input ("Please enter a third integer: ")
 
-s = int(x)+int(y)+int(z)
-print("The sum of the three numbers is: ")
-print(s)
+s = int(x) + int(y) + int(z)
+print("The sum of the three numbers is: " + str(s))
