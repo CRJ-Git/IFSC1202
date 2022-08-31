@@ -1,7 +1,9 @@
+print("First Timestamp:")
 hours1 = int(input("Please enter the hours for timestamp one: "))
 minutes1 = int(input("Please enter the minutes for timestamp one: "))
 seconds1 = int(input("Please enter the seconds for timestamp one: "))
 
+print("Second Timestamp:")
 hours2 = int(input("Please enter the hours for timestamp two: "))
 minutes2 = int(input("Please enter the minutes for timestamp two: "))
 seconds2 = int(input("Please enter the seconds for timestamp two: "))
