@@ -1,12 +1,12 @@
-hours1 = input("Please enter the hours for timestamp one: ")
-minutes1 = input("Please enter the minutes for timestamp one: ")
-seconds1 = input("Please enter the seconds for timestamp one: ")
+hours1 = int(input("Please enter the hours for timestamp one: "))
+minutes1 = int(input("Please enter the minutes for timestamp one: "))
+seconds1 = int(input("Please enter the seconds for timestamp one: "))
 
-hours2 = input("Please enter the hours for timestamp two: ")
-minutes2 = input("Please enter the minutes for timestamp two: ")
-seconds2 = input("Please enter the seconds for timestamp two: ")
+hours2 = int(input("Please enter the hours for timestamp two: "))
+minutes2 = int(input("Please enter the minutes for timestamp two: "))
+seconds2 = int(input("Please enter the seconds for timestamp two: "))
 
-hour_total = int(hours2) - int(hours1) * 60 * 60
-minute_total = int(minutes2) - int(minutes1) * 60
-second_total = int(seconds2) - int(seconds1)
-print(hour_total + minute_total + second_total)
+total1 = (hours1 * 60 * 60) + (minutes1 * 60) + seconds1
+total2 = (hours2 * 60 * 60) + (minutes2 * 60) + seconds2
+
+print(total2 - total1)
