@@ -1,3 +1,5 @@
 x = int(input("Please enter a number: "))
 
-print()
+x %= 10
+
+print("{:>4d}".format(x))
