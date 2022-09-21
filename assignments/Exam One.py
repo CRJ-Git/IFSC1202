@@ -1,3 +1,6 @@
+#IFSC 1202 - Exam 1
+#By: Christian Johnston
+
 from random import randint
 print("Winners and Losers - Human is Even, Computer is Odd")
 
