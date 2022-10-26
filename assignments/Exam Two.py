@@ -31,11 +31,13 @@ while userInput != 'Q' or 'q':
 
     for i in range(len(boysNames)):
         if userInput == boysNames[i]:
-            print("{} - Rank {}".format(boysNames[i], i))
-            break
-        if userInput == girlsNames[i]:
-            print("{} - Rank {}".format(girlsNames[i], i))
-            break
+            print("{} - Rank {}".format(boysNames[i], i+1))
+            
+            
+        elif userInput == girlsNames[i]:
+            print("{} - Rank {}".format(girlsNames[i], i+1))
+            
         else:
             print("Name Not Found")
-            break
+            
+    
