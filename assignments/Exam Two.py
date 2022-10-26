@@ -23,8 +23,7 @@ while namesLine != '':
 
 
 while userInput != 'Q' or 'q':
-    #userInput = input("Please enter a name (or Q to exit): ")
-    userInput = "Liam"
+    userInput = input("Please enter a name (or Q to exit): ")
 
     userInput = userInput.strip()
 
@@ -33,3 +32,10 @@ while userInput != 'Q' or 'q':
     for i in range(len(boysNames)):
         if userInput == boysNames[i]:
             print("{} - Rank {}".format(boysNames[i], i))
+            break
+        if userInput == girlsNames[i]:
+            print("{} - Rank {}".format(girlsNames[i], i))
+            break
+        else:
+            print("Name Not Found")
+            break
