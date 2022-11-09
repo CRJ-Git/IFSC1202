@@ -15,4 +15,12 @@ inventoryfile = open("/workspace/IFSC1202/assignments/unit10/10.02 Inventory.txt
 inventoryline = inventoryfile.readline()
 
 while inventoryline != "":
-    v = inventoryline.split("")
+    #v for vector
+    v = inventoryline.split(", ")
+    itemVector.append(RetailItem(v[0], v[1], v[2]))
+    inventoryline = inventoryfile.readline()
+
+print("{:^15}{:^15}{:^15}{:^15}" .format("Description", "Units on Hand", "Price", "Inventory Value"))
+
+for i in range(len(itemVector)):
+    print("{:^15}{:^15}{:^15}{:^15}" .format(itemVector[i].description, itemVector[i].unitsonhand, itemVector[i].price, itemVector[i].InventoryValue))
