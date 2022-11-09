@@ -17,11 +17,12 @@ inventoryline = inventoryfile.readline()
 while inventoryline != "":
     #v for vector
     v = inventoryline.split(", ")
+    v[2] = v[2].replace("\n", "")
     itemVector.append(RetailItem(v[0], v[1], v[2]))
+    
     inventoryline = inventoryfile.readline()
 
 print("{:^15}{:^15}{:^15}{:^15}" .format("Description", "Units on Hand", "Price", "Inventory Value"))
 
 for i in range(len(itemVector)):
-    #value = itemVector[i].InventoryValue()
     print("{:^15}{:^15}{:^15}{:^15.2f}" .format(itemVector[i].description, itemVector[i].unitsonhand, itemVector[i].price, itemVector[i].InventoryValue(itemVector[i].unitsonhand, itemVector[i].price)))
