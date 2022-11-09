@@ -4,9 +4,9 @@ class RetailItem ():
         self.unitsonhand = unitsonhand
         self.price = price
     
-    def InventoryValue(unitsonhand, price):
-        value = unitsonhand * price
-        return value
+    def InventoryValue(self, unitsonhand, price):
+        temp = int(unitsonhand) * float(price)
+        return temp
 
 itemVector = []
 
@@ -23,4 +23,5 @@ while inventoryline != "":
 print("{:^15}{:^15}{:^15}{:^15}" .format("Description", "Units on Hand", "Price", "Inventory Value"))
 
 for i in range(len(itemVector)):
-    print("{:^15}{:^15}{:^15}{:^15}" .format(itemVector[i].description, itemVector[i].unitsonhand, itemVector[i].price, itemVector[i].InventoryValue))
+    #value = itemVector[i].InventoryValue()
+    print("{:^15}{:^15}{:^15}{:^15.2f}" .format(itemVector[i].description, itemVector[i].unitsonhand, itemVector[i].price, itemVector[i].InventoryValue(itemVector[i].unitsonhand, itemVector[i].price)))
