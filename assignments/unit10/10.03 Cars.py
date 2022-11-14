@@ -1,14 +1,14 @@
 class Car ():
-    def __init__(self, year, make, speed = 0):
+    def __init__(self, year, make, speed):
         self.year = year
         self.make = make
-        self.speed = speed
+        self.speed = 0
 
     def Accelerate(self, value):
         self.speed += value
     
     def Brake(self, value):
-        while int(self.speed) > 0:
+        if int(self.speed) >= 0:
             self.speed -= value
         if int(self.speed) < 0:
             self.speed = 0
@@ -20,7 +20,7 @@ line = carfile.readline()
 v = line.split(", ")
 v[1].replace("\n", "")
 
-car1 = Car(v[0], v[1])
+car1 = Car(v[0], v[1], 0)
 
 line = carfile.readline()
 
