@@ -19,7 +19,6 @@ while inventoryline != "":
     v = inventoryline.split(", ")
     v[2] = v[2].replace("\n", "")
     itemVector.append(RetailItem(v[0], v[1], v[2]))
-    
     inventoryline = inventoryfile.readline()
 
 def print_inventory(itemVector):
@@ -34,4 +33,16 @@ def find_inventory(itemVector, itemtofind):
             return i
     return -1
 
-updatefile = 
+print_inventory(itemVector)
+
+updatefile = open("/workspace/IFSC1202/assignments/unit11/11.01 InventoryUpdate.txt")
+
+updateline = updatefile.readline()
+
+while updateline != "":
+    v = updateline.split(", ")
+    v[1] = v[1].replace("\n", "")
+    itemVector[find_inventory(itemVector, v[0])].price = v[1]
+    updateline = updatefile.readline
+
+print_inventory(itemVector)
