@@ -67,6 +67,7 @@ class CourseList():
         while line != "":
             v = line.split(",")
             v[4] = v[4].replace("\n", "")
+            #code breaks here, out of time to debug!
             CourseList.add_course(v[0], v[1], v[2], v[3], v[4])
 
 #start of main program:
