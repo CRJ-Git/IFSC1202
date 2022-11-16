@@ -26,3 +26,4 @@ print("{:^15}{:^15}{:^15}{:^15}" .format("Description", "Units on Hand", "Price"
 
 for i in range(len(itemVector)):
     print("{:^15}{:^15}{:^15}{:^15.2f}" .format(itemVector[i].description, itemVector[i].unitsonhand, itemVector[i].price, itemVector[i].InventoryValue(itemVector[i].unitsonhand, itemVector[i].price)))
+
