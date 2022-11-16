@@ -41,7 +41,7 @@ updateline = updatefile.readline()
 
 while updateline != "":
     v = updateline.split(", ")
-    v[1] = v[1].replace("\n", "")
+    v[1] = a[1].replace("\n", "")
     itemVector[find_inventory(itemVector, v[0])].price = v[1]
     updateline = updatefile.readline
 
