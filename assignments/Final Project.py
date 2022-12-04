@@ -10,34 +10,61 @@ class Sketch ():
             self.canvas.append([" "] * size)
     
     def printsketch():
+        #here I decided to use a string variable to print the canvas
+        line = ""
+        print("+" + "-" * size + "+")
+        #y
+        for i in range(len(canvas)):
+            #x
+            for j in range(len(canvas[i])):
+                line += canvas[i][j]
+            print("|" + line + "|")
+            line = ""
         
-
+        print("+" + "-" * size + "+")
+        print("X = " + self.xpos + " Y = " + self.ypos + " Direction = " + self.direction)
+    
     def penup():
-        pen = "U"
+        self.pen = "U"
     
     def pendown():
-        pen = "D"
+        self.pen = "D"
     
     def turnleft():
-        if direction == "U":
-            direction = "L"
-        if direction == "L":
-            direction = "D"
-        if direction == "D":
-            direction = "R"
-        if direction == "R":
-            direction = "U"
+        #no switch! :(  looking it up I think I could use match/case but I think for this use case, if statements will work
+        if self.direction == "U":
+            self.direction = "L"
+        elif self.direction == "L":
+            self.direction = "D"
+        elif self.direction == "D":
+            self.direction = "R"
+        elif self.direction == "R":
+            self.direction = "U"
     
     def turnright():
-        if direction == "U":
-            direction = "R"
-        if direction == "R":
-            direction = "D"
-        if direction == "D":
-            direction = "L"
-        if direction == "L":
-            direction = "U"
+        if self.direction == "U":
+            self.direction = "R"
+        elif self.direction == "R":
+            self.direction = "D"
+        elif self.direction == "D":
+            self.direction = "L"
+        elif self.direction == "L":
+            self.direction = "U"
     
     def move(self, distance):
-        
-        
+        #here is where the hint would apply, as the y position values have to work in reverse
+        if direction == "U":
+            for i in range(distance):
+                if pen == "D":
+                    canvas[ypos][xpos] = "*"
+                ypos -= 1
+                if ypos < 0:
+                    ypos = 0
+
+        elif self.direction == "R":
+            xpos += distance
+        elif self.direction == "D":
+            ypos += distance
+        elif self.direction == "L":
+            xpos -= distance
+            
