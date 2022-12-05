@@ -4,11 +4,11 @@ line = ""
 for i in range(size):
     canvas.append([" "] * size)
 
-canvas[0][10] = "*"
+canvas[10][5] = "*"
 
 print("+" + "-" * size + "+")
 #y
-for i in range(len(canvas)):
+for i in range(len(canvas)-1, 0, -1):
     #x
     for j in range(len(canvas[i])):
         line += canvas[i][j]
