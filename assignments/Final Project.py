@@ -31,7 +31,8 @@ class Sketch ():
         self.pen = "D"
     
     def turnleft(self):
-        #no switch! :(  looking it up I think I could use match/case but I think for this use case, if statements will work
+        #no switch! :(  looking it up I think I could use match/case,
+        #but I think for this use case if/elif statements will work
         if self.direction == "U":
             self.direction = "L"
         elif self.direction == "L":
