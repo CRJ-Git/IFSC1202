@@ -52,7 +52,7 @@ class Sketch ():
             self.direction = "U"
     
     def move(self, distance):
-        #here is where the hint would apply, as the y position values have to work in reverse
+        #here is where the hint would probably apply, as the y position values have to work in reverse
         if direction == "U":
             for i in range(distance):
                 if pen == "D":

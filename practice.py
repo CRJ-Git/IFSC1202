@@ -4,7 +4,7 @@ line = ""
 for i in range(size):
     canvas.append([" "] * size)
 
-canvas[1][10] = "*"
+canvas[0][10] = "*"
 
 print("+" + "-" * size + "+")
 #y
