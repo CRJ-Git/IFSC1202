@@ -14,15 +14,15 @@ class Sketch ():
         line = ""
         print("+" + "-" * size + "+")
         #y
-        for i in range(len(canvas)-1, 0, -1):
+        for i in range(len(self.canvas)-1, 0, -1):
             #x
-            for j in range(len(canvas[i])):
-                line += canvas[i][j]
+            for j in range(len(self.canvas[i])):
+                line += self.canvas[i][j]
             print("|" + line + "|")
             line = ""
         
         print("+" + "-" * size + "+")
-        print("X = " + self.xpos + " Y = " + self.ypos + " Direction = " + self.direction)
+        print("X = " + str(self.xpos) + " Y = " + str(self.ypos) + " Direction = " + str(self.direction))
     
     def penup(self):
         self.pen = "U"
@@ -53,37 +53,37 @@ class Sketch ():
     
     def move(self, distance):
         
-        if direction == "U":
+        if self.direction == "U":
             for i in range(distance):
-                while pen == "D":
-                    canvas[ypos][xpos] = "*"
-                ypos += 1
-                if ypos > size-1:
-                    ypos = size-1
+                if self.pen == "D":
+                    self.canvas[self.ypos][self.xpos] = "*"
+                self.ypos += 1
+                if self.ypos > size-1:
+                    self.ypos = size-1
 
         elif self.direction == "R":
             for i in range(distance):
-                while pen == "D":
-                    canvas[ypos][xpos] = "*"
-                xpos += 1
-                if xpos > size-1:
-                    xpos = size-1
+                if self.pen == "D":
+                    self.canvas[self.ypos][self.xpos] = "*"
+                self.xpos += 1
+                if self.xpos > size-1:
+                    self.xpos = size-1
         
         elif self.direction == "D":
             for i in range(distance):
-                while pen == "D":
-                    canvas[ypos][xpos] = "*"
-                ypos -= 1
-                if ypos < 0:
-                    ypos = 0
+                if self.pen == "D":
+                    self.canvas[self.ypos][self.xpos] = "*"
+                self.ypos -= 1
+                if self.ypos < 0:
+                    self.ypos = 0
         
         elif self.direction == "L":
             for i in range(distance):
-                while pen == "D":
-                    canvas[ypos][xpos] = "*"
-                xpos += 1
-                if xpos < 0:
-                    xpos = 0
+                if self.pen == "D":
+                    self.canvas[self.ypos][self.xpos] = "*"
+                self.xpos -= 1
+                if self.xpos < 0:
+                    self.xpos = 0
 
 #getting the file
 cshapefile = open("/workspace/IFSC1202/assignments/Cshape.txt")
@@ -100,18 +100,18 @@ turtlegraphics = Sketch(size)
 cshapeline = cshapefile.readline()
 while cshapeline != "":
     command = cshapeline.replace("\n", "")
-    command = cshapeline.split(",")
+    command = command.split(",")
     #here I implement the command structure (probably better to implement it elsewhere but I think this is fine)
-    if command[0] == 1:
+    if int(command[0]) == 1:
         turtlegraphics.penup()
-    elif command[0] == 2:
+    elif int(command[0]) == 2:
         turtlegraphics.pendown()
-    elif command[0] == 3:
+    elif int(command[0]) == 3:
         turtlegraphics.turnright()
-    elif command[0] == 4:
+    elif int(command[0]) == 4:
         turtlegraphics.turnleft()
-    elif command[0] == 5:
-        turtlegraphics.move(command[1])
-    elif command[0] == 6:
+    elif int(command[0]) == 5:
+        turtlegraphics.move(int(command[1]))
+    elif int(command[0]) == 6:
         turtlegraphics.printsketch()
     cshapeline = cshapefile.readline()
